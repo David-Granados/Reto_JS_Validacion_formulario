@@ -1,6 +1,43 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
 body {
+    margin: 0;
+    margin-bottom: 40px;
     font-family: Arial;
     box-sizing: border-box;
+}
+header{
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+}
+footer{
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    
+}
+.text_footer{
+    color: white;
+}
+.pie{
+    text-align: center;
+    color: white;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+.imagen_logo{
+    padding-left: 3%;
+    
+    width: 50px;
+    margin: 10px 10px;
 }
 
 form {
@@ -10,6 +47,8 @@ form {
     padding: 15px;
     margin: 0 auto;
     width: 300px;
+    padding-top: 5%;
+    
 }
 
 input,textarea{
@@ -20,7 +59,7 @@ input,textarea{
 
 .field{
     border: solid 1px #ccc;
-    padding: 3px;
+    padding: 5px;
 }
 
 .center-content{

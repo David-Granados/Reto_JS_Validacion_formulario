@@ -7,41 +7,53 @@
     <title>Formulario Epic Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body background="images/fondo_Epic_Game.png">
+    <header class="cabecera">
+        <a href="https://www.epicgames.com/site/es-ES/home"><img src="images/Epic_Games_logo.png" alt="logo_epic" class="imagen_logo"></a>
+    </header>
+    <br>
     <form action="">
-    <h1 class="center-content">Formulario <br> Epic Game</h1>
-    
+    <h1 class="center-content">Formulario </h1>
     <p>Nombre:
-        <input type="text" name="nombre" id="name" class="field" maxlength="20">
+        <input type="text" name="nombre" id="name" class="field" maxlength="20" placeholder="Nombre">
     <p>
     <p>Apellidos:
-        <input type="text" name="apellidos" id="surnames" class="field" maxlength="40">
+        <input type="text" name="apellidos" id="surnames" class="field" maxlength="40" placeholder="Apellidos">
     </p>
     <p>Correo:
-        <input type="email" name="email" id="mail" class="field">
+        <input type="email" name="email" id="mail" class="field" placeholder="Correo">
     </p>
     <p>Teléfono:
-        <input type="tel" name="telephone" id="telf" class="field" maxlength="9">
+        <input type="tel" name="telephone" id="telf" class="field" maxlength="9" placeholder="Teléfono">
     </p>
     <p>DNI:
-        <input type="number" name="dni" id="dni" class="field" maxlength="10">
+        <input type="number" name="dni" id="dni" class="field" maxlength="10" placeholder="DNI">
     </p>
     <p>IBAN:
-        <input type="number" name="iban" id="iban" class="field" maxlength="10">
+        <input type="text" name="iban" id="iban" class="field" maxlength="10" placeholder="IBAN">
     </p>
     <p>Swift:
-        <input type="number" name="swift" id="swift" class="field" >
+        <input type="text" name="swift" id="swift" class="field"  placeholder="Swift">
     </p>
     <p>Nombre de usuario:
-        <input type="text" name="username" id="username" class="field">
+        <input type="text" name="username" id="username" class="field" placeholder="Nombre de usuario">
     </p>
     <p>Fecha de nacimiento:
-        <input type="date" name="birthday" id="birthday" class="field">
+        <input type="datetime" name="birthday" id="birthday" class="field" placeholder="01/01/1990">
     </p>
     <p class="center-content">
         <button type="submit" class="btn" >Iniciar</button>
+        
     </p>
     </form>
+
+    <footer >
+        <p class="pie">
+            © 2022, Epic Games, Inc. Todos los derechos reservados.<br>
+            <a class="text_footer" href="https://www.epicgames.com/site/es-ES/tos">Términos de servicio</a>
+        </p>
+        
+    </footer>
     <script src="js/validator.js"></script>
 </body>
 </html>
