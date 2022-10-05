@@ -12,25 +12,25 @@
     <h1 class="center-content">Formulario <br> Epic Game</h1>
     
     <p>Nombre:
-        <input type="text" name="nombre" id="name" class="field">
+        <input type="text" name="nombre" id="name" class="field" maxlength="20">
     <p>
     <p>Apellidos:
-        <input type="text" name="apellidos" id="surnames" class="field">
+        <input type="text" name="apellidos" id="surnames" class="field" maxlength="40">
     </p>
     <p>Correo:
         <input type="email" name="email" id="mail" class="field">
     </p>
     <p>Teléfono:
-        <input type="tel" name="telephone" id="telf" class="field">
+        <input type="tel" name="telephone" id="telf" class="field" maxlength="9">
     </p>
     <p>DNI:
-        <input type="number" name="dni" id="dni" class="field">
+        <input type="number" name="dni" id="dni" class="field" maxlength="10">
     </p>
     <p>IBAN:
-        <input type="number" name="iban" id="iban" class="field">
+        <input type="number" name="iban" id="iban" class="field" maxlength="10">
     </p>
     <p>Swift:
-        <input type="number" name="swift" id="swift" class="field">
+        <input type="number" name="swift" id="swift" class="field" >
     </p>
     <p>Nombre de usuario:
         <input type="text" name="username" id="username" class="field">
@@ -38,6 +38,10 @@
     <p>Fecha de nacimiento:
         <input type="date" name="birthday" id="birthday" class="field">
     </p>
+    <p class="center-content">
+        <button type="submit" class="btn" >Iniciar</button>
+    </p>
     </form>
+    <script src="js/validator.js"></script>
 </body>
 </html>
