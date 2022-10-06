@@ -28,25 +28,45 @@ function bind_close() {
 /**
  * Create vars for get input a HTML
  */
-var firstname = selector("name"); 
-var surname = selector("surnames"); 
-var mail = selector("mail"); 
-var telf = selector("telf"); 
-var dni = selector("dni"); 
-var iban = selector("iban"); 
-var swift = selector("swift"); 
-var username = selector("username"); 
-var birthday = selector("birthday"); 
+var firstname = $("name"); 
+var surname = $("surnames"); 
+var mail = $("mail"); 
+var telf = $("telf"); 
+var dni = $("dni"); 
+var iban = $("iban"); 
+var swift = $("swift"); 
+var username = $("username"); 
+var birthday = $("birthday"); 
 
 /**
  * Create validators
  */
-if (condition) {
-    myAlert("");
-}
+// if (condition) {
+//     myAlert("");
+// }
+function nif(dni){
+   
+    expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
+   
+    if(expresion_regular_dni.test (dni) == true){
+       numero = dni.substr(0,dni.length-1);
+       letr = dni.substr(dni.length-1,1);
+       numero = numero % 23;
+       letra='TRWAGMYFPDXBNJZSQVHLCKET';
+       letra=letra.substring(numero,numero+1);
+      if (letra!=letr.toUpperCase()) {
+        myAlert('Dni erroneo, la letra del NIF no se corresponde');
+       }else{
+        myAlert('Dni correcto');
+       }
+    }else{
+        myAlert('Dni erroneo, formato no válido');
+     }
+  }
 /**
  * When all validators are OK, clear all inputs
  */
-$("#btn").addEventListener("click",()=>{
-
+ $("#btn").addEventListener("click",function(){
+    nif(dni);
+    
 });
