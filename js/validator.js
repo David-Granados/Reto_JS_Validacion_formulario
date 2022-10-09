@@ -28,15 +28,17 @@ function bind_close() {
 /**
  * Create vars for get input a HTML
  */
-var firstname = $("name"); 
-var surname = $("surnames"); 
-var mail = $("mail"); 
-var telf = $("telf"); 
-var dni = $("dni"); 
-var iban = $("iban"); 
-var swift = $("swift"); 
-var username = $("username"); 
-var birthday = $("birthday"); 
+var firstname = document.getElementById("firstname");
+var surname = $("#surnames"); 
+var mail = $("#mail"); 
+var telf = $("#telf"); 
+var dni = $("#dni"); 
+var iban = $("#iban"); 
+var swift = $("#swift"); 
+var username = $("#username"); 
+var birthday = $("#birthday"); 
+var expresion_regular_mail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+var expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
 
 /**
  * Create validators
@@ -44,10 +46,7 @@ var birthday = $("birthday");
 // if (condition) {
 //     myAlert("");
 // }
-function nif(dni){
-   
-    expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
-   
+function nif(dni){   
     if(expresion_regular_dni.test (dni) == true){
        numero = dni.substr(0,dni.length-1);
        letr = dni.substr(dni.length-1,1);
@@ -66,7 +65,9 @@ function nif(dni){
 /**
  * When all validators are OK, clear all inputs
  */
- $("#btn").addEventListener("click",function(){
-    nif(dni);
+ $(".btn").addEventListener("click",()=>{
+
     
+    console.log(firstname);
+
 });
