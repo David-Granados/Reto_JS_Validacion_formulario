@@ -62,3 +62,7 @@ input,textarea{
 .center-content{
     text-align: center;
 }
+.alerta{
+    background: grey;
+    color: white;
+}
