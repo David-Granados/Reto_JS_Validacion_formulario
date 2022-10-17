@@ -16,31 +16,31 @@
     <form id="form" action="">
     <h1 class="center-content">Formulario </h1>
     <p>Nombre:
-        <input type="text" id="firstname" class="field" maxlength="20" required onchange="">
+        <input type="text" id="firstname" class="field" maxlength="20" required onchange="validatorFirstname()">
     <p>
     <p>Apellidos:
-        <input type="text"  id="surnames" class="field" maxlength="40" required onchange="">
+        <input type="text"  id="surnames" class="field" maxlength="40" required onchange="validatorSurname()">
     </p>
     <p>Correo:
-        <input type="email" id="mail" class="field" required onchange="">
+        <input type="email" id="mail" class="field" required onchange="validatorEmail()">
     </p>
     <p>Teléfono:
-        <input type="tel" id="telf" class="field" maxlength="12" required onchange="">
+        <input type="tel" id="telf" class="field" maxlength="12" required onchange="validatorTelephone()">
     </p>
     <p>DNI:
-        <input type="text" id="dni" class="field" required onchange="">
+        <input type="text" id="dni" class="field" required onchange="validaroDNI()">
     </p>
     <p>IBAN:
-        <input type="text" id="iban" class="field" required onchange="">
+        <input type="text" id="iban" class="field" required onchange="validatorIBAN()">
     </p>
     <p>Swift:
-        <input type="text" id="swift" class="field" required onchange="">
+        <input type="text" id="swift" class="field" required onchange="validatorSwift()">
     </p>
     <p>Nombre de usuario:
-        <input type="text" id="username" class="field" required onchange="">
+        <input type="text" id="username" class="field" required onchange="validorUserName()">
     </p>
     <p>Fecha de nacimiento:
-        <input type="date" id="birthday" class="field" required onchange="">
+        <input type="date" id="birthday" class="field" required>
     </p>
     <input type="submit" id="btn"></input>
     </form>
