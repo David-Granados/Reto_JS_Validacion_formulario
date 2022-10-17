@@ -32,32 +32,32 @@ function $(selector){
 //Validadores
 function validatorFirstname(){
     const firstname = document.getElementById("firstname").value;
-    if (!expresion_regular_name.match(regexp_name)){
+    if (!firstname.match(regexp_name)){
         myAlert("Nombre erróneo. Formato no válido");
     }
 }
 function validatorSurname(){
     const surname = document.getElementById("surnames").value;
-    if (!expresion_regular_name.match(regexp_name)){
+    if (!surname.match(regexp_name)){
         myAlert("Apellidos erróneos. Formato no válido");
     }
 }
 function validatorEmail() {
     const mail = document.getElementById("mail").value;
-    if (!expresion_regular_mail.match(regexp_mail)){
+    if (!mail.match(regexp_mail)){
         myAlert("Formato de Email no valido (alguien@dominio.org)");
     }
 }
 function validatorTelephone(){
     //Telephone
     const telephone = document.getElementById("telf").value;
-    if (!expresion_regular_telf.match(regexp_telf)){
+    if (!telephone.match(regexp_telf)){
         myAlert("Formato de telefono no válido (+34600000000)");
     }
 }
 function validaroDNI(){
     const dni = document.getElementById("dni").value;
-    if (expresion_regular_dni.match(regexp_dni)) {
+    if (dni.match(regexp_dni)) {
         numero = dni.substr(0, dni.length - 1);
         letr = dni.substr(dni.length - 1, 1);
         numero = numero % 23;
@@ -72,10 +72,13 @@ function validaroDNI(){
     }
 }
 function validatorIBAN(){
-    
+    const iban = document.getElementById("iban").value;
+    if(!iban.match(regexp_iban)){
+        myAlert("Formato de IBAN no válido (ES00 0000 0000 0000)");
+    }
 }
 function validatorSwift(){
-    
+    const iban = document.getElementById("iban").value;
 }
 function validorUserName(){
     const username = document.getElementById("username").value;
