@@ -55,18 +55,17 @@ const validarFormulario = (e) => {
         case "dni":
             if (regexps.regexp_dni.test(e.target.value)) {
                 const alert_firstname = document.getElementById('dni');
-                alert_firstname.classList.remove('input_incorrect');
                 const dni = alert_firstname.value;
-                if (dni.match(regexps.regexp_dni)) {
-                    numero = dni.substr(0, dni.length - 1);
-                    letr = dni.substr(dni.length - 1, 1);
-                    numero = numero % 23;
-                    letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-                    letra = letra.substring(numero, numero + 1);
-                    if (letra != letr.toUpperCase()){
-                        alert_firstname.classList.add('input_incorrect');
-                        console.log('Dni erroneo, la letra del NIF no se corresponde');
-                    }
+                numero = dni.substr(0, dni.length - 1);
+                letr = dni.substr(dni.length - 1, 1);
+                numero = numero % 23;
+                letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+                letra = letra.substring(numero, numero + 1);
+                if (letra != letr.toUpperCase()){
+                    alert_firstname.classList.add('input_incorrect');
+                    console.log('Dni erroneo, la letra del NIF no se corresponde');
+                }else{
+                    alert_firstname.classList.remove('input_incorrect');
                 }
             }else{
                 const alert_firstname = document.getElementById('dni');
