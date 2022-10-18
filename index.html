@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,50 +9,67 @@
     <link rel="shortcut icon" href="images/Epic_Games_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body background="images/fondo_Epic_Game.png">
     <header class="cabecera">
-        <a href="https://www.epicgames.com/site/es-ES/home"><img src="images/Epic_Games_logo.png" alt="logo_epic" class="imagen_logo"></a>
+        <a href="https://www.epicgames.com/site/es-ES/home"><img src="images/Epic_Games_logo.png" alt="logo_epic"
+                class="imagen_logo"></a>
     </header>
-    <br>
     <form id="form" action="">
-    <h1 class="center-content">Formulario </h1>
-    <p>Nombre:
-        <input type="text" id="firstname" class="field" maxlength="20" required onchange="validatorFirstname()">
-    <p>
-    <p>Apellidos:
-        <input type="text"  id="surnames" class="field" maxlength="40" required onchange="validatorSurname()">
-    </p>
-    <p>Correo:
-        <input type="email" id="mail" class="field" required onchange="validatorEmail()">
-    </p>
-    <p>Teléfono:
-        <input type="tel" id="telf" class="field" maxlength="12" required onchange="validatorTelephone()">
-    </p>
-    <p>DNI:
-        <input type="text" id="dni" class="field" required onchange="validaroDNI()">
-    </p>
-    <p>IBAN:
-        <input type="text" id="iban" class="field" required onchange="validatorIBAN()">
-    </p>
-    <p>Swift:
-        <input type="text" id="swift" class="field" required onchange="validatorSwift()">
-    </p>
-    <p>Nombre de usuario:
-        <input type="text" id="username" class="field" required onchange="validorUserName()">
-    </p>
-    <p>Fecha de nacimiento:
-        <input type="date" id="birthday" class="field" required>
-    </p>
-    <input type="submit" id="btn"></input>
+        <img src="images/Epic_Games_logo.png" alt="cabecera_logo" class="cabecera_logo">
+        <h1 class="center-content">Formulario </h1>
+        
+        <div id="div_firstname">Nombre:
+            <input type="text" id="firstname" class="field" maxlength="20" required placeholder="Firstname">
+        </div>
+
+        <div id="div_surname">Apellidos:
+            <input type="text" id="surname" class="field" maxlength="40" required placeholder="Surname">
+        </div>
+
+        <div id="div_mail">Correo:
+            <input type="email" id="mail" class="field" value="" required placeholder="ejem@domin.org">
+        </div>
+
+        <div id="div_telf">Teléfono:
+            <input type="tel" id="telf" class="field" maxlength="12" required placeholder="666666666">
+        </div>
+
+        <div id="div_dni">DNI:
+            <input type="text" id="dni" class="field" required placeholder="99999999A">
+        </div>
+
+        <div id="div_iban">IBAN:
+            <input type="text" id="iban" class="field" required placeholder="ES0000000000000000000000">
+        </div>
+
+        <div id="div_swift">Swift:
+            <input type="text" id="swift" class="field" required placeholder="Swift">
+        </div>
+
+        <div id="div_username">Nombre de usuario:
+            <input type="text" id="username" class="field" required placeholder="Username">
+        </div>
+
+        <div id="div_date">Fecha de nacimiento:
+            <input type="date" id="birthday" class="field" required>
+        </div>
+
+        <div id="div_comments">Comentarios:
+            <textarea type="textarea" name="coments" id="coments" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="submit" id="btn"></input>
     </form>
 
     <footer >
-        <p class="pie">
+        <div class="pie">
             © 2022, Epic Games, Inc. Todos los derechos reservados.<br>
             <a class="text_footer" href="https://www.epicgames.com/site/es-ES/tos">Términos de servicio</a>
-        </p>
-        
+            <div>
+
     </footer>
     <script src="js/validator.js"></script>
 </body>
+
 </html>

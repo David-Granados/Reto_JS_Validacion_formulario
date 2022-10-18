@@ -1,88 +1,149 @@
-const regexp_name = /^[a-zA-Z]+[a-zA-Z]+$/;
-const regexp_telf = /^[09][0-9]{1,7}$/;
-const regexp_mail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
-const regexp_dni = /^\d{8}[a-zA-Z]$/;
-const regexp_iban = /[a-zA-Z]{2}[0-9]{20}$/;
-const regexp_username = /^[A-Za-z]\\w{5,29}$/;
-/**
- * Alerts
- */
-function myAlert(msg){
-    var div = document.createElement("div");
-    div.style.background = "grey";
-    div.style.color = "white";
-    div.style.textAlign = "center";
-    div.classList.add("alert");
-    div.innerHTML = msg;
-    var close = document.createElement("span");
-    close.style.float = "right";
-    close.style.marginRight = "2%";
-    close.classList.add("close");
-    close.innerHTML = "X";
-    div.appendChild(close);
-    $("body").insertBefore(div, $("body").firstChild);
-    bind_close();
+const regexps = {
+    regexp_name : /^[a-zA-ZÀ-ÿ\s]{1,50}$/,
+    regexp_mail : /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    regexp_telf : 	/^\d{9}$/,
+    regexp_dni : /^\d{8}[a-zA-Z]$/,
+    regexp_iban : /[a-zA-Z]{2}[0-9]{20}$/,
+    regexp_username : /^[a-zA-Z0-9\_\-]{4,20}$/
 }
 /**
  * Create alert and selector element
  */
-function $(selector){
-    return document.querySelector(selector);
-}
-//Validadores
-function validatorFirstname(){
-    const firstname = document.getElementById("firstname").value;
-    if (!firstname.match(regexp_name)){
-        myAlert("Nombre erróneo. Formato no válido");
-    }
-}
-function validatorSurname(){
-    const surname = document.getElementById("surnames").value;
-    if (!surname.match(regexp_name)){
-        myAlert("Apellidos erróneos. Formato no válido");
-    }
-}
-function validatorEmail() {
-    const mail = document.getElementById("mail").value;
-    if (!mail.match(regexp_mail)){
-        myAlert("Formato de Email no valido (alguien@dominio.org)");
-    }
-}
-function validatorTelephone(){
-    //Telephone
-    const telephone = document.getElementById("telf").value;
-    if (!telephone.match(regexp_telf)){
-        myAlert("Formato de telefono no válido (+34600000000)");
-    }
-}
-function validaroDNI(){
-    const dni = document.getElementById("dni").value;
-    if (dni.match(regexp_dni)) {
-        numero = dni.substr(0, dni.length - 1);
-        letr = dni.substr(dni.length - 1, 1);
-        numero = numero % 23;
-        letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-        letra = letra.substring(numero, numero + 1);
-        if (letra != letr.toUpperCase()){
-            myAlert('Dni erroneo, la letra del NIF no se corresponde');
 
-        }
-    }else{
-       myAlert('Dni erroneo, formato no válido');
-    }
+const formulario = document.getElementById("form");
+
+const inputs = document.querySelectorAll('#form input');
+
+const validarFormulario = (e) => {
+    switch (e.target.id) {
+        case "firstname":
+            if (regexps.regexp_name.test(e.target.value)) {
+                const alert_firstname = document.getElementById('firstname');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('firstname');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "surname":
+            if (regexps.regexp_name.test(e.target.value)) {
+                const alert_firstname = document.getElementById('surname');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('surname');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "mail":
+            if (regexps.regexp_mail.test(e.target.value)) {
+                const alert_firstname = document.getElementById('mail');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('mail');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "telf":
+            if (regexps.regexp_telf.test(e.target.value)) {
+                const alert_firstname = document.getElementById('telf');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('telf');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "dni":
+            if (regexps.regexp_dni.test(e.target.value)) {
+                const alert_firstname = document.getElementById('dni');
+                alert_firstname.classList.remove('input_incorrect');
+                const dni = alert_firstname.value;
+                if (dni.match(regexps.regexp_dni)) {
+                    numero = dni.substr(0, dni.length - 1);
+                    letr = dni.substr(dni.length - 1, 1);
+                    numero = numero % 23;
+                    letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+                    letra = letra.substring(numero, numero + 1);
+                    if (letra != letr.toUpperCase()){
+                        alert_firstname.classList.add('input_incorrect');
+                        console.log('Dni erroneo, la letra del NIF no se corresponde');
+                    }
+                }
+            }else{
+                const alert_firstname = document.getElementById('dni');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "iban":
+            if (regexps.regexp_iban.test(e.target.value)) {
+                const alert_firstname = document.getElementById('iban');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('iban');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "swift":
+            if (regexps.regexp_name.test(e.target.value)) {
+                const alert_firstname = document.getElementById('swift');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('swift');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        case "username":
+            if (regexps.regexp_username.test(e.target.value)) {
+                const alert_firstname = document.getElementById('username');
+                alert_firstname.classList.remove('input_incorrect');
+            }else{
+                const alert_firstname = document.getElementById('username');
+                alert_firstname.classList.add('input_incorrect');
+            }
+            break;
+        default:
+            break;
+    };
 }
-function validatorIBAN(){
-    const iban = document.getElementById("iban").value;
-    if(!iban.match(regexp_iban)){
-        myAlert("Formato de IBAN no válido (ES00 0000 0000 0000)");
-    }
-}
-function validatorSwift(){
-    const iban = document.getElementById("iban").value;
-}
-function validorUserName(){
-    const username = document.getElementById("username").value;
-    if (!expresion_regular_username.match(regexp_username)) {
-        myAlert("Nombre de usuario erroneo, formato no válido");
-    }
-}
+
+inputs.forEach((input)=>{
+    input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) =>{
+    e.preventDefault();
+
+});
+
+
+
+
+
+
+//Validadores
+
+// }
+// function validaroDNI(){
+//     const dni = document.getElementById("dni").value;
+//     if (dni.match(regexp_dni)) {
+//         numero = dni.substr(0, dni.length - 1);
+//         letr = dni.substr(dni.length - 1, 1);
+//         numero = numero % 23;
+//         letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+//         letra = letra.substring(numero, numero + 1);
+//         if (letra != letr.toUpperCase()){
+//             myAlert('Dni erroneo, la letra del NIF no se corresponde');
+
+//         }
+//     }else{
+//        myAlert('Dni erroneo, formato no válido');
+//     }
+// }
+// function validatorIBAN(){
+//     const iban = document.getElementById("iban").value;
+//     if(!iban.match(regexp_iban)){
+//         myAlert("Formato de IBAN no válido (ES00 0000 0000 0000)");
+//     }
+// }
+// function validatorSwift(){
+//     const iban = document.getElementById("iban").value;
+// }

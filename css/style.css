@@ -22,7 +22,6 @@ footer{
     margin: 0 auto;
     position: absolute;
     bottom: 0;
-    
 }
 .text_footer{
     color: white;
@@ -46,6 +45,8 @@ form {
     padding: 15px;
     margin: 0 auto;
     width: 300px;
+    margin-bottom: 150px;
+    margin-top: 15px;
 }
 
 input,textarea{
@@ -65,4 +66,15 @@ input,textarea{
 .alerta{
     background: grey;
     color: white;
+}
+.cabecera_logo{
+    width: 30%;
+    margin-left: 110px;
+}
+div{
+    padding-bottom: 20px;
+}
+.input_incorrect{
+    height: min-content;
+    border: 1.5px solid red;
 }
