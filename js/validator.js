@@ -23,6 +23,7 @@ const validarFormulario = (e) => {
             }else{
                 const alert_firstname = document.getElementById('firstname');
                 alert_firstname.classList.add('input_incorrect');
+                
             }
             break;
         case "surname":
@@ -112,37 +113,3 @@ formulario.addEventListener('submit', (e) =>{
     e.preventDefault();
 
 });
-
-
-
-
-
-
-//Validadores
-
-// }
-// function validaroDNI(){
-//     const dni = document.getElementById("dni").value;
-//     if (dni.match(regexp_dni)) {
-//         numero = dni.substr(0, dni.length - 1);
-//         letr = dni.substr(dni.length - 1, 1);
-//         numero = numero % 23;
-//         letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-//         letra = letra.substring(numero, numero + 1);
-//         if (letra != letr.toUpperCase()){
-//             myAlert('Dni erroneo, la letra del NIF no se corresponde');
-
-//         }
-//     }else{
-//        myAlert('Dni erroneo, formato no válido');
-//     }
-// }
-// function validatorIBAN(){
-//     const iban = document.getElementById("iban").value;
-//     if(!iban.match(regexp_iban)){
-//         myAlert("Formato de IBAN no válido (ES00 0000 0000 0000)");
-//     }
-// }
-// function validatorSwift(){
-//     const iban = document.getElementById("iban").value;
-// }

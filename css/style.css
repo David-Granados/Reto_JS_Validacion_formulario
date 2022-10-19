@@ -78,3 +78,6 @@ div{
     height: min-content;
     border: 1.5px solid red;
 }
+p{
+    color: red;
+}
