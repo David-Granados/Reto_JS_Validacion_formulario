@@ -39,21 +39,26 @@ const validarFormulario = (e) => {
             if (regexps.regexp_mail.test(e.target.value)) {
                 const alert_firstname = document.getElementById('mail');
                 alert_firstname.classList.remove('input_incorrect');
+                document.getElementById("textError-mail").style.display = "none";
             }else{
                 const alert_firstname = document.getElementById('mail');
                 alert_firstname.classList.add('input_incorrect');
+                document.getElementById("textError-mail").style.display = "block";
             }
             break;
         case "telf":
             if (regexps.regexp_telf.test(e.target.value)) {
                 const alert_firstname = document.getElementById('telf');
                 alert_firstname.classList.remove('input_incorrect');
+                document.getElementById("textError-telf").style.display = "none";
             }else{
                 const alert_firstname = document.getElementById('telf');
                 alert_firstname.classList.add('input_incorrect');
+                document.getElementById("textError-telf").style.display = "block";
             }
             break;
         case "dni":
+            console.log(e.target.value);
             if (regexps.regexp_dni.test(e.target.value)) {
                 const alert_firstname = document.getElementById('dni');
                 const dni = alert_firstname.value;
@@ -64,13 +69,16 @@ const validarFormulario = (e) => {
                 letra = letra.substring(numero, numero + 1);
                 if (letra != letr.toUpperCase()){
                     alert_firstname.classList.add('input_incorrect');
-                    console.log('Dni erroneo, la letra del NIF no se corresponde');
+                    document.getElementById("textError-dni").style.display = "block";
                 }else{
                     alert_firstname.classList.remove('input_incorrect');
+                    document.getElementById("textError-dni").style.display = "none";
                 }
             }else{
                 const alert_firstname = document.getElementById('dni');
                 alert_firstname.classList.add('input_incorrect');
+                
+                
             }
             break;
         case "iban":

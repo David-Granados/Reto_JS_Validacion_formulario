@@ -81,3 +81,10 @@ div{
 p{
     color: red;
 }
+#textError-active{
+    display: block;
+}
+#textError-mail, #textError-telf, #textError-dni, #textError-iban, #textError-username{
+    display: none;
+    font-style: oblique;
+}
