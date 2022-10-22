@@ -78,7 +78,6 @@ const validarFormulario = (e) => {
                 const alert_firstname = document.getElementById('dni');
                 alert_firstname.classList.add('input_incorrect');
                 
-                
             }
             break;
         case "iban":
@@ -119,5 +118,5 @@ inputs.forEach((input)=>{
 
 formulario.addEventListener('submit', (e) =>{
     e.preventDefault();
-
+    
 });
