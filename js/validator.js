@@ -118,5 +118,11 @@ inputs.forEach((input)=>{
 
 formulario.addEventListener('submit', (e) =>{
     e.preventDefault();
+    var confirm = document.getElementById('confirm');
+    if(confirm){
+        console.log("Esta macado");
+    }else{
+        console.log("No esta macado");
+    }
     
 });
