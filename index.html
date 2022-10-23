@@ -15,7 +15,7 @@
         <a href="https://www.epicgames.com/site/es-ES/home"><img src="images/Epic_Games_logo.png" alt="logo_epic"
                 class="imagen_logo"></a>
     </header>
-    <form id="form" action="./principal.html">
+    <form id="form" action="">
         <img src="images/Epic_Games_logo.png" alt="cabecera_logo" class="cabecera_logo">
         <h1 class="center-content">Formulario </h1>
         
@@ -26,26 +26,29 @@
             <input type="text" id="surname" class="field" maxlength="40" required placeholder="Surname">
         </div>
         <div id="div_mail">Correo:
-            <input type="email" id="mail" class="field" value="" required placeholder="ejem@domin.org">
+            <input type="email" id="mail" class="field" required placeholder="ejem@domin.org">
             <label id="textError-mail">Formato de email erroneo.</label>
         </div>
 
         <div id="div_telf">Teléfono:
             <input type="tel" id="telf" class="field" maxlength="12" required placeholder="666666666">
-            <label id="textError-telf">Formato de telefono erroneo.</label>
+            <label id="textError-telf">Formato de telefono erroneo. 9 digitos sin espacios</label>
         </div>
 
         <div id="div_dni">DNI:
             <input type="text" id="dni" class="field" required placeholder="99999999A">
-            <label id="textError-dni">Dni erroneo, la letra del NIF no se corresponde.</label>
+            <label id="textError-dni-valido">Formato del DNI erroneo. 8 numeros y una letra valida</label>
+            <label id="textError-dni-letra">Formato del DNI erroneo. Letra no valida</label>
         </div>
 
         <div id="div_iban">IBAN:
             <input type="text" id="iban" class="field" required placeholder="ES0000000000000000000000">
+            <label id="textError-iban">Formato del IBAN erroneo. Seguir formato "ES0000000000000000000000"</label>
         </div>
 
         <div id="div_swift">Swift:
             <input type="text" id="swift" class="field" required placeholder="Swift">
+            <label id="textError-swift">Formato del Swift erroneo. Seguir formato "BSABESBBXXX"</label>
         </div>
 
         <div id="div_username">Nombre de usuario:
@@ -55,15 +58,6 @@
         <div id="div_date">Fecha de nacimiento:
             <input type="date" id="birthday" class="field" required>
         </div>
-
-        <div id="countrys">País:
-            <select name="country" id="country">
-                <option value="">---</option>
-                <option value="Europe">Europa</option>
-                <option value="Europe">America</option>
-                <option value="Europe">Oceanía</option>
-            </select>
-        </div>
         <div id="div_comments">Comentarios:
             <textarea type="textarea" name="coments" id="coments" class="field" cols="30" rows="10"></textarea>
         </div>
@@ -72,7 +66,8 @@
            Acepto los Términos y Condiciones
         </div>
         <div>
-            <input type="submit" id="btn" ></input>
+            <input type="submit" value="Enviar"/>
+            <input type="reset" value="Recargar" onclick="window.location.reload()">
         </div>
         
     </form>

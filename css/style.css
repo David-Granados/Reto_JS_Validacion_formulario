@@ -77,20 +77,15 @@ div{
 #textError-active{
     display: block;
 }
-#textError-mail, #textError-telf, #textError-dni, #textError-iban, #textError-username{
-    display: none;
-    font-style: oblique;
-}
 #confirm{
     margin-left: 5px;
-}
-#country{
-    width: 250px;
-    float: right;
-    margin-right: 8px;
 }
 #btn{
     width: 280px;
     float: right;
     margin-right: 14px;
+}
+#textError-mail, #textError-telf,#textError-dni-valido,#textError-dni-letra,#textError-iban,#textError-swift{
+    display: none;
+
 }
